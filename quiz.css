@@ -1,0 +1,7 @@
+#headline {
+    padding: 0.8em;
+    color: white;
+    font-family: Roboto, sans-serif;
+    background-image: url(backgroundimage.jpg);
+    background-size: cover;
+}
