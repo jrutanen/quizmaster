@@ -7,9 +7,10 @@
     <script src="quizmanager.js"></script>
     <script type="text/javascript">
         gameStarted = false;
+        //question number needs to be increased by 3 for each round
         questionNbr = 0;
         user = "";
-        var questions = "";
+        var questions;
 
         function drawPage(){
             if (questionNbr == 0 && !gameStarted) {
@@ -44,7 +45,6 @@
 //                    alert( "Game Started, status:" + data );
                     gameStarted = true;
                     getQuestions();
-                    drawPage();
                 } else {
 //                    alert( "Game Not Started, status:" + data );
                     gameStarted = false;
@@ -53,19 +53,23 @@
             });
         }
         function getQuestions() {
-            alert( "Getting Questions...");
+//            alert( "Getting Questions...");
             $.get( "getquestions.php?quiz=1", function( data ) {
 //                alert( "Running page: " + data );
-                questions = data;
+                questions = JSON.parse( data );
+                drawPage();
             });
         }
 
         function questionScreen(questionNbr){
             $("div.registerForm").hide();
-            $("#qOne").attr('value',questions[questionNbr-1].answer);
-            $("#qTwo").attr('value',questions[questionNbr].answer);
-            $("#qThree").attr('value',questions[questionNbr+1].answer);
             $("div.answerForm").show();
+            $('#qOne').attr("disabled", false);
+            $('#qTwo').attr("disabled", false);
+            $('#qThree').attr("disabled", false);
+            $("#qOne").attr('value',questions[questionNbr-1].answer.replace(/"/g, ''));
+            $("#qTwo").attr('value',questions[questionNbr].answer.replace(/"/g, ''));
+            $("#qThree").attr('value',questions[questionNbr+1].answer.replace(/"/g, ''));
             $("div.waitScreen").hide();
         }
 
@@ -86,6 +90,14 @@
         }
 
         function registerAnswer(q, a) {
+            $('#qOne').attr("disabled", true);
+            $('#qTwo').attr("disabled", true);
+            $('#qThree').attr("disabled", true);
+            if(questions[q+a].correct == 1) {
+                //answer was correct update database
+            } else {
+                //answer was incorrect, do nothing
+            }
             alert( "You answered: " + q + ": " + a);
         }
 
@@ -123,9 +135,9 @@
         <div class=answerForm>
             <form method="post" id="answer">
                 <h2 id="question">What TV Series?</h2>
-                <input type="button" id="qOne" value="Spencer for Hire" onclick="registerAnswer(questionNbr, 1)">
-                <input type="button" id="qTwo" value="Dallas" onclick="registerAnswer(questionNbr, 2)">
-                <input type="button" id="qthree" value="Hill Street Blues" onclick="registerAnswer(questionNbr, 3)">
+                <input type="button" id="qOne" value="Test One" onclick="registerAnswer(questionNbr, -1)">
+                <input type="button" id="qTwo" value="Test Two" onclick="registerAnswer(questionNbr, 0)">
+                <input type="button" id="qThree" value="Test Three" onclick="registerAnswer(questionNbr, 1)">
             </form>
         </div>
         <div class=waitScreen>
