@@ -3,7 +3,7 @@
     $username = 'web';
 
     //Create connection
-    conn = new mysqli($server, $username, 'pw');
+    $conn = new mysqli($server, $username, 'pw');
 
     //check connection
     if ($conn->connect_error) {

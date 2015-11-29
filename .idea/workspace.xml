@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da479a9-ec61-4d61-90d1-398887f15778" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getQuiz.php" afterPath="$PROJECT_DIR$/getQuiz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/questions.html" afterPath="$PROJECT_DIR$/questions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/running.php" afterPath="$PROJECT_DIR$/running.php" />
     </list>
     <ignored path="quizmaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="running.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/running.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17099749">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.07124895">
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -406,8 +405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/running.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17099749">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.07124895">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
       </provider>
