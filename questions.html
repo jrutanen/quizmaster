@@ -11,10 +11,6 @@
         user = "";
         var questions = "";
 
-        function checkStarted(){
-            return 0;
-        }
-
         function drawPage(){
             if (questionNbr == 0 && !gameStarted) {
                 signScreen();
@@ -37,14 +33,17 @@
             $("div.registerForm").hide();
             $("div.answerForm").hide();
             $("div.waitScreen").show();
-            while (!gameStarted) {
-                setTimeout(getGameStatus() , 1000);
-            }
-            startGame();
+        //    while (!gameStarted) {
+        //        setTimeout(getGameStatus() , 1000);
+        //    }
+            getGameStatus();
+            //startGame();
         }
 
         function getGameStatus() {
-            $.get( "http://23.254.243.148/quizmaster/running.php", function( data ) {
+            alert( "Getting game status");
+            $.get( "running.php", function( data ) {
+                alert( "Running page: " + data );
                 if ( data == 1 ) {
                     alert( "Game Started" + data );
                     gameStarted = true;
