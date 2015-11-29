@@ -1,0 +1,90 @@
+1, 1, 1, Baywatch, 0
+1, 1, 2, Mission Impossible, 1
+1, 1, 3, Hunter, 0
+1, 2, 1, Star Trek The Next Generation, 0
+1, 2, 2, Star Trek Voyager, 0
+1, 2, 3, Star Trek Deep Space Nine, 1
+1, 3, 1, The Walking Dead, 1
+1, 3, 2, The Vampire Diaries, 0
+1, 3, 3, American Horror Show, 0
+1, 4, 1, Family Guy, 1
+1, 4, 2, South Park, 0
+1, 4, 3, The Simpsons, 0
+1, 5, 1, Merlin, 0
+1, 5, 2, Game of Thrones, 1
+1, 5, 3, Robin of Sherwood, 0
+1, 6, 1, That's '70s Show, 0
+1, 6, 2, Scrubs, 0
+1, 6, 3, The Big Bang Theory, 1
+1, 7, 1, MacGyver, 1
+1, 7, 2, Magnum P.I., 0
+1, 7, 3, The Dukes of Hazzard, 0
+1, 8, 1, Weeds, 0
+1, 8, 2, Doctor Who, 0
+1, 8, 3, Breaking Bad, 1
+1, 9, 1, The Brady Bunch, 0
+1, 9, 2, Friends, 1
+1, 9, 3, Happy Days, 0
+1, 10, 1, Monty Pythons Flying Circus, 0
+1, 10, 2, The Benny Hill Show, 1
+1, 10, 3, The Young Ones, 0
+1, 11, 1, Miami Vice, 1
+1, 11, 2, The Young Riders, 0
+1, 11, 3, Sledge Hammer, 0
+1, 12, 1, Narcos, 0
+1, 12, 2, Fargo, 0
+1, 12, 3, Hawaii Five-O, 1
+1, 13, 1, Anger Management, 0
+1, 13, 2, 2 1/2 Men, 1
+1, 13, 3, Spin City, 0
+1, 14, 1, Babylon 5, 0
+1, 14, 2, X-Files, 1
+1, 14, 3, Haven, 0
+1, 15, 1, Brookly Nine-Nine, 0
+1, 15, 2, NYPD Blue, 0
+1, 15, 3, Hill Street Blues, 1
+1, 16, 1, Seinfeld, 1
+1, 16, 2, News Radio, 0
+1, 16, 3, Community, 0
+1, 17, 1, Firefly, 1
+1, 17, 2, Continuum, 0
+1, 17, 3, Heroes, 0
+1, 18, 1, Falcon Crest, 0
+1, 18, 2, Dynasty, 0
+1, 18, 3, Dallas, 1
+1, 19, 1, Ally Mcbeal, 0
+1, 19, 2, Sex and the City, 1
+1, 19, 3, Desperate Housewives, 0
+1, 20, 1, Twin Peaks, 1
+1, 20, 2, The Killing, 0
+1, 20, 3, Pretty Little Liars, 0
+1, 21, 1, Melrose Place, 0
+1, 21, 2, The O.C., 0
+1, 21, 3, Beverly Hills 90210, 1
+1, 22, 1, the Osbournes, 0
+1, 22, 2, Keeping Up with the Kardashians, 1
+1, 22, 3, Hogan Knows Best, 0
+1, 23, 1, The Munsters, 1
+1, 23, 2, Adams Family, 0
+1, 23, 3, Monster in My Family, 0
+1, 24, 1, Monk, 1
+1, 24, 2, Matlock, 0
+1, 24, 3, Columbo, 0
+1, 25, 1, Louie, 0
+1, 25, 2, Yes Minister, 0
+1, 25, 3, Frasier, 1
+1, 26, 1, Star Wars: The Clone Wars, 0
+1, 26, 2, V, 0
+1, 26, 3, Battle Star Galactica, 1
+1, 27, 1, How I Met Your Mother, 0
+1, 27, 2, 3rd Rock from the Sun, 1
+1, 27, 3, Rules of Engagement, 0
+1, 28, 1, iCarly, 0
+1, 28, 2, Hannah Montana, 1
+1, 28, 3, Good Luck Charlie, 0
+1, 29, 1, Midsomer Murders, 0
+1, 29, 2, Downton Abbey, 1
+1, 29, 3, Agatha Christie Poirot, 0
+1, 30, 1, Airwolf, 0
+1, 30, 2, Knight Rider, 0
+1, 30, 3, A-Team, 1

@@ -33,26 +33,30 @@
             $("div.registerForm").hide();
             $("div.answerForm").hide();
             $("div.waitScreen").show();
-        //    while (!gameStarted) {
-        //        setTimeout(getGameStatus() , 1000);
-        //    }
             getGameStatus();
-            //startGame();
         }
 
         function getGameStatus() {
-            alert( "Getting game status");
+//            alert( "Getting game status");
             $.get( "running.php", function( data ) {
-                alert( "Running page: " + data );
+//                alert( "Running page: " + data );
                 if ( data == 1 ) {
-                    alert( "Game Started, status:" + data );
+//                    alert( "Game Started, status:" + data );
                     gameStarted = true;
+                    getQuestions();
                     drawPage();
                 } else {
-                    alert( "Game Not Started, status:" + data );
+//                    alert( "Game Not Started, status:" + data );
                     gameStarted = false;
                     getGameStatus();
                 }
+            });
+        }
+        function getQuestions() {
+            alert( "Getting Questions...");
+            $.get( "getquestions.php?quiz=1", function( data ) {
+//                alert( "Running page: " + data );
+                questions = data;
             });
         }
 
