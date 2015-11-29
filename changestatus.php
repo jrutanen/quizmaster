@@ -22,12 +22,6 @@
 
         $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            echo "ok";
-        } else {
-            echo "ERROR - No was not able to change value.";
-        }
-
         $conn->close();
         echo $_GET['status'];
     } else {
