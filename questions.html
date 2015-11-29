@@ -9,12 +9,23 @@
         gameStarted = false;
         questionNbr = 0;
         user = "";
+        var questions = "";
 
         function checkStarted(){
             return 0;
         }
 
         function drawPage(){
+            $.getJSON( "data/musicquiz.json", function( data ) {
+                $.each( data, function( key, val ) {
+                    items.push( "<li id='" + key + "'>" + val + "</li>" );
+                });
+
+                $( "<ul/>", {
+                    "class": "my-new-list",
+                    html: items.join( "" )
+                }).appendTo( "body" );
+            });
             if (questionNbr == 0 && !gameStarted) {
                 signScreen();
             } else if (questionNbr > 0 && !gameStarted) {
@@ -66,6 +77,18 @@
         function registerAnswer(q, a) {
             alert( "You answered: " + q + ": " + a);
         }
+
+        function isRunning() {
+            $.ajax({ url: 'running.php',
+                success: function(output) {
+                    alert(output);
+                    if (output == 1) {
+                        startGame();
+                    }
+                }
+            });
+        }
+
         window.onload = drawPage;
     </script>
     <title>Quizmaster Questions</title>

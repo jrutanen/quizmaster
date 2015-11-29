@@ -1,15 +1,4 @@
 <?php
-    $servername = "localhost";
-    $username = "test";
-    $password = "test";
-/*
-    //create connection
-    $conn = new mysqli($servername, $username, $password);
-
-    //check connection
-    if ($conn->mysqli_connect_error()) {
-        die("Connection failed: " . $conn->mysqli_connect_error()):
-    }
-*/
-    echo "Connected successfully";
+    $data = file_get_contents ('./data/musicquiz.json');
+    echo json_encode($data);
 ?>
