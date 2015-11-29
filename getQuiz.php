@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";
+/*    $servername = "localhost";
     $username = "";
     $password = "";
 
@@ -10,6 +10,6 @@
     if ($conn->mysqli_connect_error()) {
         die("Connection failed: " . $conn->mysqli_connect_error()):
     }
-
+*/
     echo "Connected successfully";
 ?>
