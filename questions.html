@@ -3,26 +3,111 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="quiz.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="quizmanager.js"></script>
+    <script type="text/javascript">
+        gameStarted = false;
+        questionNbr = 0;
+        user = "";
+
+        function checkStarted(){
+            return 0;
+        }
+
+        function drawPage(){
+            if (questionNbr == 0 && !gameStarted) {
+                signScreen();
+            } else if (questionNbr > 0 && !gameStarted) {
+                waitScreen();
+            } else {
+                qNumber = questionNbr;
+                questionScreen(qNumber);
+            }
+            $('body').show();
+        }
+
+        function signScreen(){
+            $("div.registerForm").show();
+            $("div.answerForm").hide();
+            $("div.waitScreen").hide();
+        }
+
+        function waitScreen(){
+            $("div.registerForm").hide();
+            $("div.answerForm").hide();
+            $("div.waitScreen").show();
+            while (!gameStarted) {
+                setTimeout(startGame() , 2000);
+            }
+        }
+
+        function questionScreen(questionNbr){
+            $("div.registerForm").hide();
+            $("div.answerForm").show();
+            $("div.waitScreen").hide();
+        }
+
+        function onRegister() {
+            var e = document.getElementById("teamDropDown");
+            user = e.options[e.selectedIndex].value;
+            questionNbr++;
+            drawPage();
+        }
+
+        function startGame() {
+            gameStarted = true;
+            drawPage();
+        }
+
+        function endGame() {
+            gameStarted = false;
+        }
+
+        function registerAnswer(q, a) {
+            alert( "You answered: " + q + ": " + a);
+        }
+        window.onload = drawPage;
+    </script>
     <title>Quizmaster Questions</title>
 </head>
 <body>
-    <script src="jquery-1.11.3.min.js"></script>
     <div id="headline">
         <div class = container>
             <header>
                 <h1>Quiz Master</h1>
+                <br>
             </header>
         </div>
-        <div id = "form">
-            <div class="container">
-                <form method="post" id="answer">
-                    <h2 id="question" class="questionText">What TV Series?</h2>
-                    <input type="submit" value="Spencer for Hire" id="anwerOne" class="answerButton">
-                    <input type="submit" value="Dallas" id="anwerTwo" class="answerButton">
-                    <input type="submit" value="Hill Street Blues" id="anwerThree" class="answerButton">
-                </form>
-            </div>
+        <div class=registerForm>
+            <form method="post" id="register">
+                    <h2>What's Your Team?</h2>
+                    <select name = "teams" id = "teamDropDown">
+                        <option value = "Bacchus">Bacchus</option>
+                        <option value = "Belenus">Belenus</option>
+                        <option value = "Doris">Doris</option>
+                        <option value = "Electra">Electra</option>
+                        <option value = "Hattifnattarna">Hattifnattarna</option>
+                        <option value = "Midas">Midas</option>
+                        <option value = "Nemesis">Nemesis</option>
+                        <option value = "PowerTeam">Discordia&Helios&Hydra</option>
+                        <option value = "Sisyphus">Sisyphus</option>
+                        <option value = "Vulcan">Vulcan</option>
+                    </select>
+                    <input type="button" value="Register" onclick="onRegister()">
+            </form>
         </div>
+        <div class=answerForm>
+            <form method="post" id="answer">
+                <h2 id="question">What TV Series?</h2>
+                <input type="button" value="Spencer for Hire" onclick="registerAnswer(questionNbr, 1)">
+                <input type="button" value="Dallas" onclick="registerAnswer(questionNbr, 2)">
+                <input type="button" value="Hill Street Blues" onclick="registerAnswer(questionNbr, 3)">
+            </form>
+        </div>
+        <div class=waitScreen>
+            <h2 id="waitTitle" class="questionText">Waiting for the game to start...</h2>
+        </div>
+        <br>
     </div>
     <footer>
         <div class="container">

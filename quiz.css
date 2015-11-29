@@ -1,6 +1,17 @@
 body {
     margin: 0;
     padding: 0;
+    display: none;
+}
+
+#loading-mask {
+    background-color: white;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 #headline {
@@ -50,7 +61,71 @@ body {
     box-sizing: border-box;
 }
 
+#headline #answer select {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 #headline #answer input[type=submit] {
+     background-color: hsl(8, 70%, 54%);
+     color: white;
+     margin-top: 20px;
+     padding: 10px;
+     border: none;
+     box-sizing: border-box;
+     font-size: 18px;
+ }
+
+#headline #answer input[type=button] {
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+#headline #register {
+    background-color: #39b1a4;
+    background-color: rgba(57,177, 164, 0.7);
+    padding: 1em;
+}
+#headline #register h2 {
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+#headline #register input {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #register select {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #register input[type=submit] {
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#headline #register input[type=button] {
     background-color: hsl(8, 70%, 54%);
     color: white;
     margin-top: 20px;
