@@ -16,16 +16,6 @@
         }
 
         function drawPage(){
-            $.getJSON( "data/musicquiz.json", function( data ) {
-                $.each( data, function( key, val ) {
-                    items.push( "<li id='" + key + "'>" + val + "</li>" );
-                });
-
-                $( "<ul/>", {
-                    "class": "my-new-list",
-                    html: items.join( "" )
-                }).appendTo( "body" );
-            });
             if (questionNbr == 0 && !gameStarted) {
                 signScreen();
             } else if (questionNbr > 0 && !gameStarted) {
@@ -48,8 +38,20 @@
             $("div.answerForm").hide();
             $("div.waitScreen").show();
             while (!gameStarted) {
-                setTimeout(startGame() , 2000);
+                setTimeout(getGameStatus() , 1000);
             }
+            startGame();
+        }
+
+        function getGameStatus() {
+            $.get( "http://23.254.243.148/quizmaster/running.php", function( data ) {
+                if ( data == 1 ) {
+                    alert( "Game Started" + data );
+                    gameStarted = true;
+                } else {
+                    alert( "Game Not Started" + data );
+                }
+            });
         }
 
         function questionScreen(questionNbr){

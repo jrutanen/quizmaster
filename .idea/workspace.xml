@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da479a9-ec61-4d61-90d1-398887f15778" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/running.php" afterPath="$PROJECT_DIR$/running.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/questions.html" afterPath="$PROJECT_DIR$/questions.html" />
     </list>
     <ignored path="quizmaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,20 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="questions.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="questions.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/questions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.127273">
-              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.5079086">
+              <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="running.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="running.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/running.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35624477">
+            <state vertical-scroll-proportion="0.0">
               <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
@@ -129,8 +129,8 @@
         <option value="$PROJECT_DIR$/quiz.css" />
         <option value="$PROJECT_DIR$/musicquiz.json" />
         <option value="$PROJECT_DIR$/getQuiz.php" />
-        <option value="$PROJECT_DIR$/questions.html" />
         <option value="$PROJECT_DIR$/running.php" />
+        <option value="$PROJECT_DIR$/questions.html" />
       </list>
     </option>
   </component>
@@ -387,14 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/questions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.127273">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getQuiz.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -405,8 +397,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/running.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35624477">
+        <state vertical-scroll-proportion="0.0">
           <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/questions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5079086">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
           <folding />
         </state>
       </provider>
