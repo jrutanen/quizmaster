@@ -13,12 +13,14 @@
             die ("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM questions WHERE quiz=" . $_GET['quiz'];
+        $sql = mysqli_query($conn, "SELECT * FROM questions WHERE quiz=" . $_GET['quiz']);
 
-        $result = $conn->query($sql);
-
+        $rows = array();
+        while($row = mysqli_fetch_assoc($sql)) {
+            $rows[] = $row;
+        }
+        print json_encode($rows);
         $conn->close();
-        echo json_encode($result);
     } else {
         echo "ERROR - No Parameter given.";
     }

@@ -62,6 +62,9 @@
 
         function questionScreen(questionNbr){
             $("div.registerForm").hide();
+            $("#qOne").attr('value',questions[questionNbr-1].answer);
+            $("#qTwo").attr('value',questions[questionNbr].answer);
+            $("#qThree").attr('value',questions[questionNbr+1].answer);
             $("div.answerForm").show();
             $("div.waitScreen").hide();
         }
@@ -102,6 +105,7 @@
             <form method="post" id="register">
                     <h2>What's Your Team?</h2>
                     <select name = "teams" id = "teamDropDown">
+                        <option value = "Test">Test</option>
                         <option value = "Bacchus">Bacchus</option>
                         <option value = "Belenus">Belenus</option>
                         <option value = "Doris">Doris</option>
@@ -119,9 +123,9 @@
         <div class=answerForm>
             <form method="post" id="answer">
                 <h2 id="question">What TV Series?</h2>
-                <input type="button" value="Spencer for Hire" onclick="registerAnswer(questionNbr, 1)">
-                <input type="button" value="Dallas" onclick="registerAnswer(questionNbr, 2)">
-                <input type="button" value="Hill Street Blues" onclick="registerAnswer(questionNbr, 3)">
+                <input type="button" id="qOne" value="Spencer for Hire" onclick="registerAnswer(questionNbr, 1)">
+                <input type="button" id="qTwo" value="Dallas" onclick="registerAnswer(questionNbr, 2)">
+                <input type="button" id="qthree" value="Hill Street Blues" onclick="registerAnswer(questionNbr, 3)">
             </form>
         </div>
         <div class=waitScreen>
