@@ -91,7 +91,7 @@ body {
 
 #headline #answer input[type=button]:disabled {
     background-color: hsl(0, 32%, 54%);
-    color: white;
+    color: lightgray;
     margin-top: 20px;
     padding: 10px;
     border: none;
