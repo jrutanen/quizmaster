@@ -88,6 +88,17 @@ body {
     box-sizing: border-box;
     font-size: 18px;
 }
+
+#headline #answer input[type=button]:disabled {
+    background-color: hsl(0, 32%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
 #headline #register {
     background-color: #39b1a4;
     background-color: rgba(57,177, 164, 0.7);

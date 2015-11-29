@@ -10,6 +10,7 @@
         //question number needs to be increased by 3 for each round
         questionNbr = 0;
         user = "";
+        diff = 0;
         var questions;
 
         function drawPage(){
@@ -90,15 +91,27 @@
         }
 
         function registerAnswer(q, a) {
-            $('#qOne').attr("disabled", true);
-            $('#qTwo').attr("disabled", true);
-            $('#qThree').attr("disabled", true);
+            if(a != -1) { $('#qOne').attr("disabled", true); }
+            if(a != 0) { $('#qTwo').attr("disabled", true); }
+            if(a != 1) { $('#qThree').attr("disabled", true); }
             if(questions[q+a].correct == 1) {
+                if(questionNbr == 1) {
+                    number = questionNumber;
+                    diff = diff + 2;
+                } else {
+                    number = questionNumber - diff;
+                    diff = diff + 2;
+                }
                 //answer was correct update database
+                $.get( "sendanswer.php?user=" + user + "&quiz=1&question=" + number, function( data ) {
+                    alert( "Answer Sent");
+                });
             } else {
                 //answer was incorrect, do nothing
             }
             alert( "You answered: " + q + ": " + a);
+            questionNbr = questionNumber + 3;
+            drawPage();
         }
 
         window.onload = drawPage;
