@@ -45,10 +45,11 @@
             $.get( "running.php", function( data ) {
                 alert( "Running page: " + data );
                 if ( data == 1 ) {
-                    alert( "Game Started" + data );
+                    alert( "Game Started, status:" + data );
                     gameStarted = true;
                 } else {
-                    alert( "Game Not Started" + data );
+                    alert( "Game Not Started, status:" + data );
+                    gameStarted = false;
                 }
             });
         }
@@ -77,17 +78,6 @@
 
         function registerAnswer(q, a) {
             alert( "You answered: " + q + ": " + a);
-        }
-
-        function isRunning() {
-            $.ajax({ url: 'running.php',
-                success: function(output) {
-                    alert(output);
-                    if (output == 1) {
-                        startGame();
-                    }
-                }
-            });
         }
 
         window.onload = drawPage;

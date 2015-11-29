@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="quiz.css">
+        <script src="jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            function drawPage() {
+                $('body').show();
+            }
+            gameStarted = false;
+            questionNbr = 0;
+            user = "";
+            var questions = "";
+
+            function changeGameStatus() {
+                alert( "Change game status clicked.");
+                if($("#changebutton").attr("value") == "Stop") {
+                    newStatus = 0;
+                    $("#changebutton").attr('value','Start');
+                } else {
+                    newStatus = 1;
+                    $("#changebutton").attr('value','Stop');
+                }
+                alert( "Change game status to: " + newStatus);
+                var webpage = "changestatus.php?status=" + newStatus;
+                $.get( webpage, function( data ) {
+                    alert( "Running page: " + data );
+                });
+            }
+
+            function startGame() {
+                changeGameStatus(1);
+                gameStarted = true;
+            }
+
+            function endGame() {
+                changeGameStatus(1);
+                gameStarted = false;
+            }
+
+            window.onload = drawPage;
+        </script>
+        <title>Quizmaster Game Controller</title>
+    </head>
+    <body>
+    <div id="headline">
+        <div class = container>
+            <header>
+                <h1>Quiz Master Controller</h1>
+                <br>
+            </header>
+        </div>
+        <div class=changestatus>
+            <form method="get" id="register">
+                <h2>Change Game Status</h2>
+                <input type="button" id="changebutton" value="Start" onclick="changeGameStatus()">
+            </form>
+        </div>
+        <br>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; Jani Rutanen</p>
+        </div>
+    </footer>
+    </body>
+</html>

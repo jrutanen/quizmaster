@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da479a9-ec61-4d61-90d1-398887f15778" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/questions.html" afterPath="$PROJECT_DIR$/questions.html" />
     </list>
     <ignored path="quizmaster.iws" />
@@ -23,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="questions.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="questions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/questions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6572935">
-              <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+            <state vertical-scroll-proportion="-19.163637">
+              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameControl.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GameControl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29134533">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -38,6 +49,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="changestatus.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/changestatus.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -112,9 +133,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -130,7 +151,9 @@
         <option value="$PROJECT_DIR$/musicquiz.json" />
         <option value="$PROJECT_DIR$/getQuiz.php" />
         <option value="$PROJECT_DIR$/running.php" />
+        <option value="$PROJECT_DIR$/changestatus.php" />
         <option value="$PROJECT_DIR$/questions.html" />
+        <option value="$PROJECT_DIR$/GameControl.html" />
       </list>
     </option>
   </component>
@@ -140,8 +163,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="195" />
-    <option name="y" value="28" />
+    <option name="x" value="500" />
+    <option name="y" value="52" />
     <option name="width" value="904" />
     <option name="height" value="1331" />
   </component>
@@ -199,6 +222,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\janirutanen\programming\quizmaster" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -264,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="195" y="28" width="904" height="1331" extended-state="0" />
+    <frame x="500" y="52" width="904" height="1331" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29655713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -403,10 +431,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/changestatus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/questions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6572935">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        <state vertical-scroll-proportion="-19.163637">
+          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameControl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29134533">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
         </state>
       </provider>
