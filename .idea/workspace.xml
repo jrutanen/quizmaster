@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9da479a9-ec61-4d61-90d1-398887f15778" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getresults.php" afterPath="$PROJECT_DIR$/getresults.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.html" afterPath="$PROJECT_DIR$/report.html" />
     </list>
     <ignored path="quizmaster.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,8 +106,8 @@
       <file leaf-file-name="getresults.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getresults.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17099749">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.1567477">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -562,8 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getresults.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17099749">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.1567477">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>

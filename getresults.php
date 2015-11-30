@@ -9,7 +9,7 @@
     $i = 0;
     while($row = mysqli_fetch_assoc($sql)) {
         if($i == 0) {
-            echo $row;
+            print $row;
             $i = 1;
         } else {
             $rows[] = $row;
