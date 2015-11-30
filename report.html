@@ -8,23 +8,20 @@
     <script type="text/javascript">
         var questions;
         var pollinterval;
+        var pollcount = 0;
 
         function drawPage(){
             pollinterval = setInterval(updateGraph, 3000);
             $('body').show();
         }
-/*
-        function getResults() {
-            $.get( "getresults.php", function( data ) {
-                alert( "Results: " + data );
-                results = JSON.parse( data );
-                updateGraph(results);
-            });
-        }
-*/
+
         function updateGraph(results){
-            d3.json("getresults.php", function(data) {
-                alert("Results: " + data);
+            pollcount++;
+            d3.json("getresults.php", function(error, data) {
+                data.forEach(function(d) {
+                    d.team = parseDate(d.player);
+                    d.close = +d.close;
+                });
             });
         }
         window.onload = drawPage;

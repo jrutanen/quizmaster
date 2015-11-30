@@ -6,8 +6,14 @@
                               ."GROUP BY player, question");
 
     $rows = array();
+    $i = 0;
     while($row = mysqli_fetch_assoc($sql)) {
-        $rows[] = $row;
+        if($i == 0) {
+            echo $row;
+            $i = 1;
+        } else {
+            $rows[] = $row;
+        }
     }
     print json_encode($rows);
 
