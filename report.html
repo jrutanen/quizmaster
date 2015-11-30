@@ -20,34 +20,74 @@
                 var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                 for (i=0;i<results.length;i++) {
                     if(results[i].player == "Bacchus") {
-                        scores[0] = scores[0] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[0] = scores[0] + Number(results[i].score);
+                        } else {
+                            scores[0] = scores[0] + 4;
+                        }
                     }
                     if(results[i].player == "Belenus") {
-                        scores[1] = scores[1] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[1] = scores[1] + Number(results[i].score);
+                        } else {
+                            scores[1] = scores[1] + 4;
+                        }
                     }
                     if(results[i].player == "Doris") {
-                        scores[2] = scores[2] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[2] = scores[2] + Number(results[i].score);
+                        } else {
+                            scores[2] = scores[2] + 4;
+                        }
                     }
                     if(results[i].player == "Electra") {
-                        scores[3] = scores[3] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[3] = scores[3] + Number(results[i].score);
+                        } else {
+                            scores[3] = scores[3] + 4;
+                        }
                     }
                     if(results[i].player == "Hattifnattarna") {
-                        scores[4] = scores[4] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[4] = scores[4] + Number(results[i].score);
+                        } else {
+                            scores[4] = scores[4] + 4;
+                        }
                     }
                     if(results[i].player == "Midas") {
-                        scores[5] = scores[5] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[5] = scores[5] + Number(results[i].score);
+                        } else {
+                            scores[5] = scores[5] + 4;
+                        }
                     }
                     if(results[i].player == "Nemesis") {
-                        scores[6] = scores[6] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[6] = scores[6] + Number(results[i].score);
+                        } else {
+                            scores[6] = scores[6] + 4;
+                        }
                     }
                     if(results[i].player == "Discordia&Helios&Hydra") {
-                        scores[7] = scores[7] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[7] = scores[7] + Number(results[i].score);
+                        } else {
+                            scores[7] = scores[7] + 4;
+                        }
                     }
                     if(results[i].player == "Sisyphus") {
-                        scores[8] = scores[8] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[8] = scores[8] + Number(results[i].score);
+                        } else {
+                            scores[8] = scores[8] + 4;
+                        }
                     }
                     if(results[i].player == "Vulcan") {
-                        scores[9] = scores[9] + Number(results[i].score);
+                        if(Number(results[i].score) < 5) {
+                            scores[9] = scores[9] + Number(results[i].score);
+                        } else {
+                            scores[9] = scores[9] + 4;
+                        }
                     }
                 }
                 $('body').hide();
@@ -91,12 +131,8 @@
 </head>
 <body>
 <div id="headline">
-    <div class = container>
-        <header>
-            <h1>Quiz Master Leader Board</h1>
-            <br>
-        </header>
-    </div>
+    <h1>Quiz Master Leader Board</h1>
+    <br><br>
 </div>
 <div class=chart>
     <div id="one"></div>
