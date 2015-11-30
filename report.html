@@ -6,143 +6,147 @@
     <link rel="stylesheet" type="text/css" href="report.css">
     <script src="jquery-1.11.3.min.js"></script>
     <script src="d3.min.js"></script>
-    <script type="text/javascript">
-        var results;
-        var pollinterval;
-        var pollcount = 0;
 
-        function drawPage(){
-            $.get( "getresults.php", function( data ) {
+    <title>Leaderboard</title>
+</head>
+<script type="text/javascript">
+    var results;
+    var pollinterval;
+    var pollcount = 0;
+
+    function drawPage(){
+        $.get( "getresults.php", function( data ) {
 //                alert( "Running page: " + data );
-                results = JSON.parse( data );
+            results = JSON.parse( data );
 //                gametime = setInterval(updateData, 1000);
 //                drawChart(results);
 //                alert("Results fetched.");
-                var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                for (i=0;i<results.length;i++) {
-                    if(results[i].player == "Bacchus") {
-                        if(Number(results[i].score) < 5) {
-                            scores[0] = scores[0] + Number(results[i].score);
-                        } else {
-                            scores[0] = scores[0] + 4;
-                        }
-                    }
-                    if(results[i].player == "Belenus") {
-                        if(Number(results[i].score) < 5) {
-                            scores[1] = scores[1] + Number(results[i].score);
-                        } else {
-                            scores[1] = scores[1] + 4;
-                        }
-                    }
-                    if(results[i].player == "Doris") {
-                        if(Number(results[i].score) < 5) {
-                            scores[2] = scores[2] + Number(results[i].score);
-                        } else {
-                            scores[2] = scores[2] + 4;
-                        }
-                    }
-                    if(results[i].player == "Electra") {
-                        if(Number(results[i].score) < 5) {
-                            scores[3] = scores[3] + Number(results[i].score);
-                        } else {
-                            scores[3] = scores[3] + 4;
-                        }
-                    }
-                    if(results[i].player == "Hattifnattarna") {
-                        if(Number(results[i].score) < 5) {
-                            scores[4] = scores[4] + Number(results[i].score);
-                        } else {
-                            scores[4] = scores[4] + 4;
-                        }
-                    }
-                    if(results[i].player == "Midas") {
-                        if(Number(results[i].score) < 5) {
-                            scores[5] = scores[5] + Number(results[i].score);
-                        } else {
-                            scores[5] = scores[5] + 4;
-                        }
-                    }
-                    if(results[i].player == "Nemesis") {
-                        if(Number(results[i].score) < 5) {
-                            scores[6] = scores[6] + Number(results[i].score);
-                        } else {
-                            scores[6] = scores[6] + 4;
-                        }
-                    }
-                    if(results[i].player == "PowerTeam") {
-                        if(Number(results[i].score) < 5) {
-                            scores[7] = scores[7] + Number(results[i].score);
-                        } else {
-                            scores[7] = scores[7] + 4;
-                        }
-                    }
-                    if(results[i].player == "Sisyphus") {
-                        if(Number(results[i].score) < 5) {
-                            scores[8] = scores[8] + Number(results[i].score);
-                        } else {
-                            scores[8] = scores[8] + 4;
-                        }
-                    }
-                    if(results[i].player == "Vulcan") {
-                        if(Number(results[i].score) < 5) {
-                            scores[9] = scores[9] + Number(results[i].score);
-                        } else {
-                            scores[9] = scores[9] + 4;
-                        }
+            var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            for (i=0;i<results.length;i++) {
+                if(results[i].player == "Bacchus") {
+                    if(Number(results[i].score) < 5) {
+                        scores[0] = scores[0] + Number(results[i].score);
+                    } else {
+                        scores[0] = scores[0] + 4;
                     }
                 }
-                $('#one').css('width', scores[0]*9 + "px");
-                $('#one').css('height', "50px");
-                $('#one').text("Bacchus: " + scores[0]);
-                $('#two').css('width', scores[1]*9 + "px");
-                $('#two').css('height', "50px");
-                $('#two').text("Belenus: " + scores[1]);
-                $('#three').css('width', scores[2]*9 + "px");
-                $('#three').css('height', "50px");
-                $('#three').text("Doris: " + scores[2]);
-                $('#four').css('width', scores[3]*9 + "px");
-                $('#four').css('height', "50px");
-                $('#four').text("Electra: " + scores[3]);
-                $('#five').css('width', scores[4]*9 + "px");
-                $('#five').css('height', "50px");
-                $('#five').text("Hattifnattarna: " + scores[4]);
-                $('#six').css('width', scores[5]*9 + "px");
-                $('#six').css('height', "50px");
-                $('#six').text("Midas: " + scores[5]);
-                $('#seven').css('width', scores[6]*9 + "px");
-                $('#seven').css('height', "50px");
-                $('#seven').text("Nemesis: " + scores[6]);
-                $('#eight').css('width', scores[7]*9 + "px");
-                $('#eight').css('height', "50px");
-                $('#eight').text("Discordia&Helios&Hydra: " + scores[7]);
-                $('#nine').css('width', scores[8]*9 + "px");
-                $('#nine').css('height', "50px");
-                $('#nine').text("Sisyphus: " + scores[8]);
-                $('#ten').css('width', scores[9]*9 + "px");
-                $('#ten').css('height', "50px");
-                $('#ten').text("Vulcan: " + scores[9]);
-            });
-        }
-        window.onload = drawPage;
-    </script>
-    <title>Leaderboard</title>
-</head>
+                if(results[i].player == "Belenus") {
+                    if(Number(results[i].score) < 5) {
+                        scores[1] = scores[1] + Number(results[i].score);
+                    } else {
+                        scores[1] = scores[1] + 4;
+                    }
+                }
+                if(results[i].player == "Doris") {
+                    if(Number(results[i].score) < 5) {
+                        scores[2] = scores[2] + Number(results[i].score);
+                    } else {
+                        scores[2] = scores[2] + 4;
+                    }
+                }
+                if(results[i].player == "Electra") {
+                    if(Number(results[i].score) < 5) {
+                        scores[3] = scores[3] + Number(results[i].score);
+                    } else {
+                        scores[3] = scores[3] + 4;
+                    }
+                }
+                if(results[i].player == "Hattifnattarna") {
+                    if(Number(results[i].score) < 5) {
+                        scores[4] = scores[4] + Number(results[i].score);
+                    } else {
+                        scores[4] = scores[4] + 4;
+                    }
+                }
+                if(results[i].player == "Midas") {
+                    if(Number(results[i].score) < 5) {
+                        scores[5] = scores[5] + Number(results[i].score);
+                    } else {
+                        scores[5] = scores[5] + 4;
+                    }
+                }
+                if(results[i].player == "Nemesis") {
+                    if(Number(results[i].score) < 5) {
+                        scores[6] = scores[6] + Number(results[i].score);
+                    } else {
+                        scores[6] = scores[6] + 4;
+                    }
+                }
+                if(results[i].player == "PowerTeam") {
+                    if(Number(results[i].score) < 5) {
+                        scores[7] = scores[7] + Number(results[i].score);
+                    } else {
+                        scores[7] = scores[7] + 4;
+                    }
+                }
+                if(results[i].player == "Sisyphus") {
+                    if(Number(results[i].score) < 5) {
+                        scores[8] = scores[8] + Number(results[i].score);
+                    } else {
+                        scores[8] = scores[8] + 4;
+                    }
+                }
+                if(results[i].player == "Vulcan") {
+                    if(Number(results[i].score) < 5) {
+                        scores[9] = scores[9] + Number(results[i].score);
+                    } else {
+                        scores[9] = scores[9] + 4;
+                    }
+                }
+            }
+            $('#one').css('width', scores[0]*9 + "px");
+            $('#one').css('height', "50px");
+            $('#one').text("Bacchus: " + scores[0]);
+            $('#two').css('width', scores[1]*9 + "px");
+            $('#two').css('height', "50px");
+            $('#two').text("Belenus: " + scores[1]);
+            $('#three').css('width', scores[2]*9 + "px");
+            $('#three').css('height', "50px");
+            $('#three').text("Doris: " + scores[2]);
+            $('#four').css('width', scores[3]*9 + "px");
+            $('#four').css('height', "50px");
+            $('#four').text("Electra: " + scores[3]);
+            $('#five').css('width', scores[4]*9 + "px");
+            $('#five').css('height', "50px");
+            $('#five').text("Hattifnattarna: " + scores[4]);
+            $('#six').css('width', scores[5]*9 + "px");
+            $('#six').css('height', "50px");
+            $('#six').text("Midas: " + scores[5]);
+            $('#seven').css('width', scores[6]*9 + "px");
+            $('#seven').css('height', "50px");
+            $('#seven').text("Nemesis: " + scores[6]);
+            $('#eight').css('width', scores[7]*9 + "px");
+            $('#eight').css('height', "50px");
+            $('#eight').text("Discordia&Helios&Hydra: " + scores[7]);
+            $('#nine').css('width', scores[8]*9 + "px");
+            $('#nine').css('height', "50px");
+            $('#nine').text("Sisyphus: " + scores[8]);
+            $('#ten').css('width', scores[9]*9 + "px");
+            $('#ten').css('height', "50px");
+            $('#ten').text("Vulcan: " + scores[9]);
+        });
+    }
+    window.onload = drawPage;
+</script>
 <body>
+<script type="text/javascript">
+    document.body.className += ' has-script';
+</script>
 <div id="headline">
     <h1>Quiz Master Leader Board</h1>
     <br><br>
 </div>
 <div class=chart>
-    <div id="one"></div>
-    <div id="two"></div>
-    <div id="three"></div>
-    <div id="four"></div>
-    <div id="five"></div>
-    <div id="six"></div>
-    <div id="seven"></div>
-    <div id="eight"></div>
-    <div id="nine"></div>
-    <div id="ten"></div>
+    <div id="one" width="0px"></div>
+    <div id="two" width="0px"></div>
+    <div id="three" width="0px"></div>
+    <div id="four" width="0px"></div>
+    <div id="five" width="0px"></div>
+    <div id="six" width="0px"></div>
+    <div id="seven" width="0px"></div>
+    <div id="eight" width="0px"></div>
+    <div id="nine" width="0px"></div>
+    <div id="ten" width="0px"></div>
 </div>
 </body>
 </html>
