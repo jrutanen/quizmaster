@@ -7,36 +7,27 @@
         <script type="text/javascript">
             function drawPage() {
                 $('body').show();
+                player = document.getElementById('audioplayer');
             }
             gameStarted = false;
             questionNbr = 0;
             user = "";
             var questions = "";
+            var player;
 
             function changeGameStatus() {
-                alert( "Change game status clicked.");
                 if($("#changebutton").attr("value") == "Stop") {
                     newStatus = 0;
                     $("#changebutton").attr('value','Start');
+                    player.play();
                 } else {
                     newStatus = 1;
                     $("#changebutton").attr('value','Stop');
+                    player.stop();
                 }
-                alert( "Change game status to: " + newStatus);
                 var webpage = "changestatus.php?status=" + newStatus;
                 $.get( webpage, function( data ) {
-                    alert( "Running page: " + data );
                 });
-            }
-
-            function startGame() {
-                changeGameStatus(1);
-                gameStarted = true;
-            }
-
-            function endGame() {
-                changeGameStatus(1);
-                gameStarted = false;
             }
 
             window.onload = drawPage;
@@ -56,6 +47,12 @@
                 <h2>Change Game Status</h2>
                 <input type="button" id="changebutton" value="Start" onclick="changeGameStatus()">
             </form>
+        </div>
+        <div class=audio>
+            <audio controls preload="auto" id="audioplayer">
+                <source src="music_quiz.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
         <br>
     </div>

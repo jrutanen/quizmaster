@@ -14,7 +14,6 @@
         timeLeft = 20;
         var questions;
         var gametime;
-        var timeout = false;
 
         function drawPage(){
             if (questionNbr == 0 && !gameStarted) {
@@ -85,21 +84,13 @@
             drawPage();
         }
 
-        function startGame() {
-            timeLeft = 20;
-            gameStarted = true;
-            setInterval(function() {
-                updateClock();
-            }, 1000);
-            drawPage();
-        }
-
         function updateClock() {
             timeLeft = timeLeft -1;
-            $(div.playtime).html(timeLeft);
+            $("div.playtime").html("<h2>" + timeLeft + "</h2>");
             if (timeLeft == 0) {
-                timeout = true;
                 timeLeft = 20;
+                questionNbr = questionNbr + 3;
+                drawPage();
             }
         }
         function endGame() {
@@ -127,13 +118,6 @@
                 //answer was incorrect, do nothing
             }
 //            alert( "You answered: " + q + ": " + a);
-            while(!timeout) {
-                //wait for the timer to pass before updating with new questions
-                //Do nothing
-            }
-            timeout = false;
-            questionNbr = questionNbr + 3;
-            drawPage();
         }
 
         window.onload = drawPage;
@@ -179,8 +163,8 @@
             <h2 id="waitTitle" class="questionText">Waiting for the game to start...</h2>
         </div>
         <br>
-    </div>
-    <div id="playtime">
+        <div class=playtime>
+        </div>
     </div>
     <footer>
         <div class="container">
