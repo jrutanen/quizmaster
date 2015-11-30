@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a;
+    color : #eaeaea;
+    padding : 10px;
+}
+
+#chart rect{
+    fill: #4aaeea;
+}
+
+#chart text{
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
+
+.axis text{
+    font: 10px sans-serif;
+}
+
+.axis path, .axis line{
+    fill: none;
+    stroke : #fff;
+    shape-rendering: crispEdges;
+}
+
+#loading-mask {
+    background-color: white;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#headline {
+    padding: 0.8em;
+    color: white;
+    font-family: Roboto, sans-serif;
+    background-image: url(background-blur.jpg);
+    background-size: cover;
+}
+
+#headline h1 {
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 1em;
+    margin-bottom: 0;
+}
+
+#headline h2 {
+    font-weight: 200;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+#headline h3 {
+    font-weight: 100;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#headline #answer {
+    background-color: #39b1a4;
+    background-color: rgba(57,177, 164, 0.7);
+    padding: 1em;
+}
+#headline #answer h2 {
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+#headline #answer label {
+    font-size: 1.2em;
+    font-weight: 200;
+    padding-top: 12px;
+    display: block;
+}
+
+#headline #answer input {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #answer select {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #answer input[type=submit] {
+     background-color: hsl(8, 70%, 54%);
+     color: white;
+     margin-top: 20px;
+     padding: 10px;
+     border: none;
+     box-sizing: border-box;
+     font-size: 18px;
+ }
+
+#headline #answer input[type=button] {
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#headline #answer input[type=button]:disabled {
+    background-color: hsl(0, 32%, 54%);
+    color: lightgray;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#headline #register {
+    background-color: #39b1a4;
+    background-color: rgba(57,177, 164, 0.7);
+    padding: 1em;
+}
+#headline #register h2 {
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+#headline #register input {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #register select {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#headline #register input[type=submit] {
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#headline #register input[type=button] {
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+footer {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    text-align: center;
+    background-color: hsl(8, 70%, 54%);
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+table {
+    margin-top: 26px;
+    width: 100%;
+}
+thead {
+    font-weight: bold;
+}
+
+tbody {
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+
+}
+
+.container {
+    margin: auto;
+    max-width: 800px;
+}
