@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da479a9-ec61-4d61-90d1-398887f15778" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getresults.php" afterPath="$PROJECT_DIR$/getresults.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.css" afterPath="$PROJECT_DIR$/report.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.html" afterPath="$PROJECT_DIR$/report.html" />
     </list>
     <ignored path="quizmaster.iws" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="questions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/questions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.192308">
-              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="155" selection-end-column="64" />
+            <state vertical-scroll-proportion="-30.73077">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -37,8 +37,8 @@
       <file leaf-file-name="report.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/report.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9125964">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33504713">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -47,8 +47,8 @@
       <file leaf-file-name="report.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.653847">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,8 +95,8 @@
         <option value="$PROJECT_DIR$/questions.html" />
         <option value="$PROJECT_DIR$/GameControl.html" />
         <option value="$PROJECT_DIR$/quiz.css" />
-        <option value="$PROJECT_DIR$/report.css" />
         <option value="$PROJECT_DIR$/getresults.php" />
+        <option value="$PROJECT_DIR$/report.css" />
         <option value="$PROJECT_DIR$/report.html" />
       </list>
     </option>
@@ -477,24 +477,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/questions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.192308">
-          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="155" selection-end-column="64" />
+        <state vertical-scroll-proportion="-30.73077">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9125964">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33504713">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
           <folding />
         </state>
       </provider>
