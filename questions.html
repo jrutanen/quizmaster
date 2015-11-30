@@ -13,6 +13,8 @@
         diff = 0;
         timeLeft = 20;
         var questions;
+        var gametime;
+        var timeout = false;
 
         function drawPage(){
             if (questionNbr == 0 && !gameStarted) {
@@ -59,6 +61,7 @@
             $.get( "getquestions.php?quiz=1", function( data ) {
 //                alert( "Running page: " + data );
                 questions = JSON.parse( data );
+                gametime = setInterval(updateClock, 1000);
                 drawPage();
             });
         }
@@ -94,6 +97,10 @@
         function updateClock() {
             timeLeft = timeLeft -1;
             $(div.playtime).html(timeLeft);
+            if (timeLeft == 0) {
+                timeout = true;
+                timeLeft = 20;
+            }
         }
         function endGame() {
             gameStarted = false;
@@ -120,6 +127,11 @@
                 //answer was incorrect, do nothing
             }
 //            alert( "You answered: " + q + ": " + a);
+            while(!timeout) {
+                //wait for the timer to pass before updating with new questions
+                //Do nothing
+            }
+            timeout = false;
             questionNbr = questionNbr + 3;
             drawPage();
         }

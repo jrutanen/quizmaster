@@ -18,7 +18,7 @@
         }
 
         $sql = "INSERT INTO results (quiz, player, question, correct) "
-             . "VALUES (" . $quiz . ",'" . $user . "'," . $question . ",1");
+             . "VALUES (" . $quiz . ",'" . $user . "'," . $question . ",1)";
 
         $result = $conn->query($sql);
 
