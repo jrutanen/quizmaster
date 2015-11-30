@@ -32,12 +32,15 @@
             $("div.registerForm").show();
             $("div.answerForm").hide();
             $("div.waitScreen").hide();
+            $("div.playtime").hide();
+
         }
 
         function waitScreen(){
             $("div.registerForm").hide();
             $("div.answerForm").hide();
             $("div.waitScreen").show();
+            $("div.playtime").hide();
             getGameStatus();
         }
 
@@ -75,6 +78,7 @@
             $("#qOne").attr('value',questions[questionNbr-1].answer.replace(/"/g, ''));
             $("#qTwo").attr('value',questions[questionNbr].answer.replace(/"/g, ''));
             $("#qThree").attr('value',questions[questionNbr+1].answer.replace(/"/g, ''));
+            $("div.playtime").show();
             $("div.waitScreen").hide();
         }
 
@@ -175,7 +179,7 @@
     </div>
     <footer>
         <div class="container">
-            <p>&copy; Jani Rutanen</p>
+            <p>&copy; Quiz Master</p>
         </div>
     </footer>
 </body>
