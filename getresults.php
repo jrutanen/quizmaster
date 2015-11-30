@@ -1,8 +1,8 @@
 <?php
     include 'db.php';
-    $sql = mysqli_query($conn, "SELECT player, count(correct) as score "
+    $sql = mysqli_query($conn, "SELECT player, question, count(correct) as score "
                               ."FROM results "
-                              ."GROUP BY player");
+                              ."GROUP BY player, question");
 
     $rows = array();
 
