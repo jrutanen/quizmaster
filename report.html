@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <meta http-equiv="refresh" content="3" >
     <link rel="stylesheet" type="text/css" href="report.css">
     <script src="jquery-1.11.3.min.js"></script>
     <script src="d3.min.js"></script>
@@ -68,7 +69,7 @@
                             scores[6] = scores[6] + 4;
                         }
                     }
-                    if(results[i].player == "Discordia&Helios&Hydra") {
+                    if(results[i].player == "PowerTeam") {
                         if(Number(results[i].score) < 5) {
                             scores[7] = scores[7] + Number(results[i].score);
                         } else {
@@ -90,30 +91,37 @@
                         }
                     }
                 }
-                $('body').hide();
                 $('#one').css('width', scores[0]*9 + "px");
+                $('#one').css('height', "50px");
                 $('#one').text("Bacchus: " + scores[0]);
                 $('#two').css('width', scores[1]*9 + "px");
+                $('#two').css('height', "50px");
                 $('#two').text("Belenus: " + scores[1]);
                 $('#three').css('width', scores[2]*9 + "px");
+                $('#three').css('height', "50px");
                 $('#three').text("Doris: " + scores[2]);
                 $('#four').css('width', scores[3]*9 + "px");
+                $('#four').css('height', "50px");
                 $('#four').text("Electra: " + scores[3]);
                 $('#five').css('width', scores[4]*9 + "px");
+                $('#five').css('height', "50px");
                 $('#five').text("Hattifnattarna: " + scores[4]);
                 $('#six').css('width', scores[5]*9 + "px");
+                $('#six').css('height', "50px");
                 $('#six').text("Midas: " + scores[5]);
                 $('#seven').css('width', scores[6]*9 + "px");
+                $('#seven').css('height', "50px");
                 $('#seven').text("Nemesis: " + scores[6]);
                 $('#eight').css('width', scores[7]*9 + "px");
+                $('#eight').css('height', "50px");
                 $('#eight').text("Discordia&Helios&Hydra: " + scores[7]);
                 $('#nine').css('width', scores[8]*9 + "px");
+                $('#nine').css('height', "50px");
                 $('#nine').text("Sisyphus: " + scores[8]);
                 $('#ten').css('width', scores[9]*9 + "px");
+                $('#ten').css('height', "50px");
                 $('#ten').text("Vulcan: " + scores[9]);
-                $('body').show();
             });
-            pollinterval = setInterval(drawPage, 3000);
         }
         window.onload = drawPage;
     </script>
