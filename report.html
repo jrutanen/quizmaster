@@ -50,6 +50,7 @@
                         scores[9] = scores[9] + Number(results[i].score);
                     }
                 }
+                $('body').hide();
                 $('#one').css('width', scores[0]*9 + "px");
                 $('#one').css('height', "40px");
                 $('#one').text("Bacchus: " + scores[0]);
@@ -80,9 +81,10 @@
                 $('#ten').css('width', scores[9]*9 + "px");
 //                $('#one').css('height', "40px");
                 $('#ten').text("Vulcan: " + scores[9]);
+                $('body').show();
             });
+            pollinterval = setInterval(drawPage, 3000);
         }
-
         window.onload = drawPage;
     </script>
     <title>Leaderboard</title>
