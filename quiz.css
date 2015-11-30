@@ -35,6 +35,14 @@ body {
     margin-top: 5px;
 }
 
+#headline h3 {
+    font-weight: 100;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
 #headline #answer {
     background-color: #39b1a4;
     background-color: rgba(57,177, 164, 0.7);

@@ -4,12 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="quiz.css">
     <script src="jquery-1.11.3.min.js"></script>
-    <script src="quizmanager.js"></script>
+    <script src="d3.min.js"></script>
     <script type="text/javascript">
         gameStarted = false;
         //question number needs to be increased by 3 for each round
         questionNbr = 0;
-        var question = 1;
         user = "";
         diff = 0;
         timeLeft = 20;
@@ -87,18 +86,10 @@
 
         function updateClock() {
             timeLeft = timeLeft -1;
-            $("div.playtime").html("<h3>" + timeLeft + "</h3>");
+            $("div.playtime").html("<h2>" + timeLeft + "</h2>");
             if (timeLeft == 0) {
                 timeLeft = 20;
                 questionNbr = questionNbr + 3;
-                question++;
-                if(question > 30) {
-                    //game ends
-                    clearInterval(gametime);
-                    gameStarted=false;
-                    questionNbr = 0;
-                    question = 1;
-                }
                 drawPage();
             }
         }
@@ -120,63 +111,114 @@
                     diff = diff + 2;
                 }
                 //answer was correct update database
-                $.get( "sendanswer.php?user=" + user + "&quiz=1&question=" + question, function( data ) {
+                $.get( "sendanswer.php?user=" + user + "&quiz=1&question=" + number, function( data ) {
 //                    alert( "Answer Sent");
                 });
             } else {
                 //answer was incorrect, do nothing
             }
+//            alert( "You answered: " + q + ": " + a);
         }
+
         window.onload = drawPage;
     </script>
-    <title>Quizmaster Questions</title>
+    <title>Leaderboard</title>
 </head>
+<style>
+
+    .axis text {
+        font: 10px sans-serif;
+    }
+
+    .axis line,
+    .axis path {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .axis--x path {
+        display: none;
+    }
+
+</style>
 <body>
-    <div id="headline">
-        <div class = container>
-            <header>
-                <h1>Quiz Master</h1>
-                <br>
-            </header>
-        </div>
-        <div class=registerForm>
-            <form method="post" id="register">
-                    <h2>What's Your Team?</h2>
-                    <select name = "teams" id = "teamDropDown">
-                        <option value = "Test">Test</option>
-                        <option value = "Bacchus">Bacchus</option>
-                        <option value = "Belenus">Belenus</option>
-                        <option value = "Doris">Doris</option>
-                        <option value = "Electra">Electra</option>
-                        <option value = "Hattifnattarna">Hattifnattarna</option>
-                        <option value = "Midas">Midas</option>
-                        <option value = "Nemesis">Nemesis</option>
-                        <option value = "PowerTeam">Discordia&Helios&Hydra</option>
-                        <option value = "Sisyphus">Sisyphus</option>
-                        <option value = "Vulcan">Vulcan</option>
-                    </select>
-                    <input type="button" value="Register" onclick="onRegister()">
-            </form>
-        </div>
-        <div class=answerForm>
-            <form method="post" id="answer">
-                <h2 id="question">What TV Series?</h2>
-                <input type="button" id="qOne" value="Test One" onclick="registerAnswer(questionNbr, -1)">
-                <input type="button" id="qTwo" value="Test Two" onclick="registerAnswer(questionNbr, 0)">
-                <input type="button" id="qThree" value="Test Three" onclick="registerAnswer(questionNbr, 1)">
-            </form>
-        </div>
-        <div class=waitScreen>
-            <h2 id="waitTitle" class="questionText">Waiting for the game to start...</h2>
-        </div>
-        <br>
-        <div class=playtime>
-        </div>
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; Jani Rutanen</p>
-        </div>
-    </footer>
+<script>
+
+    var causes = ["wounds", "other", "disease"];
+
+    var parseDate = d3.time.format("%m/%Y").parse;
+
+    var margin = {top: 20, right: 50, bottom: 30, left: 20},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+    var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width]);
+
+    var y = d3.scale.linear()
+            .rangeRound([height, 0]);
+
+    var z = d3.scale.category10();
+
+    var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom")
+            .tickFormat(d3.time.format("%b"));
+
+    var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("right");
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.tsv("crimea.tsv", type, function(error, crimea) {
+        if (error) throw error;
+
+        var layers = d3.layout.stack()(causes.map(function(c) {
+            return crimea.map(function(d) {
+                return {x: d.date, y: d[c]};
+            });
+        }));
+
+        x.domain(layers[0].map(function(d) { return d.x; }));
+        y.domain([0, d3.max(layers[layers.length - 1], function(d) { return d.y0 + d.y; })]).nice();
+
+        var layer = svg.selectAll(".layer")
+                .data(layers)
+                .enter().append("g")
+                .attr("class", "layer")
+                .style("fill", function(d, i) { return z(i); });
+
+        layer.selectAll("rect")
+                .data(function(d) { return d; })
+                .enter().append("rect")
+                .attr("x", function(d) { return x(d.x); })
+                .attr("y", function(d) { return y(d.y + d.y0); })
+                .attr("height", function(d) { return y(d.y0) - y(d.y + d.y0); })
+                .attr("width", x.rangeBand() - 1);
+
+        svg.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
+
+        svg.append("g")
+                .attr("class", "axis axis--y")
+                .attr("transform", "translate(" + width + ",0)")
+                .call(yAxis);
+    });
+
+    function type(d) {
+        d.date = parseDate(d.date);
+        causes.forEach(function(c) { d[c] = +d[c]; });
+        return d;
+    }
+
+</script>
 </body>
 </html>

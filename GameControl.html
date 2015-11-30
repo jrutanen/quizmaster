@@ -19,11 +19,9 @@
                 if($("#changebutton").attr("value") == "Stop") {
                     newStatus = 0;
                     $("#changebutton").attr('value','Start');
-                    player.play();
                 } else {
                     newStatus = 1;
                     $("#changebutton").attr('value','Stop');
-                    player.stop();
                 }
                 var webpage = "changestatus.php?status=" + newStatus;
                 $.get( webpage, function( data ) {
