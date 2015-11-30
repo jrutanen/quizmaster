@@ -9,7 +9,8 @@
     while($row = mysqli_fetch_assoc($sql)) {
         $rows[] = $row;
     }
-    print json_encode($rows);
+    $data = str_replace("//select player, question, count(correct) from results group by player, question; ", "", $rows);.
+    print json_encode($data);
 
     $conn->close();
 ?>
