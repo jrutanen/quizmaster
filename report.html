@@ -33,51 +33,31 @@
                 .scale(y)
                 .orient("left");
 
-
-        function drawPage(){
-            pollinterval = setInterval(updateGraph, 3000);
-            $('body').show();
-        }
-
-        function updateGraph(results){
-            pollcount++;
-            d3.json("getresults.php", function(error, data) {
-                data.forEach(function(d) {
-                    d.team = parseDate(d.player);
-                    d.close = +d.close;
-                });
-            });
-        }
-
         d3.json("getresults.php", function(error, data){
-            x.domain(data.map(function(d){ return d.player}));
+//            x.domain(data.map(function(d){ return d.player}));
             y.domain([0, d3.max(data, function(d){return d.score})]);
 
-            alert(data);
+            var barWidth = width/ data.length;
+
+//            alert(data);
 
             var bar = chart.selectAll("g")
                     .data(data)
                     .enter()
                     .append("g")
                     .attr("transform", function(d, i){
-                        return "translate("+x(d.player)+", 0)";
+                        return "translate("+ i * barWidth + ", 0)";
                     });
 
             bar.append("rect")
-                    .attr("y", function(d) {
-                        return y(d.score);
-                    })
-                    .attr("x", function(d,i){
-                        return x.rangeBand()+(margin.left/2);
-                    })
-                    .attr("height", function(d) {
-                        return height - y(d.score);
-                    })
-                    .attr("width", x.rangeBand());  //set width base on range on ordinal data
+                    .attr("y", function(d) { return y(d.score); })
+                    .attr("x", function(d,i){ return x.rangeBand()+(margin.left/2); })
+                    .attr("height", function(d) { return height - y(d.score) + 3; })
+                    .attr("width", barWidth-1);  //set width base on range on ordinal data
 
             bar.append("text")
-                    .attr("x", x.rangeBand()+margin.left )
-                    .attr("y", function(d) { return y(d.score) -10; })
+                    .attr("x", barWidth/2 )
+                    .attr("y", function(d) { return y(d.score) + 3; })
                     .attr("dy", ".75em")
                     .text(function(d) { return d.score; });
 
@@ -86,7 +66,7 @@
                     .attr("transform", "translate("+margin.left+","+ height+")")
                     .call(xAxis);
     */
-            chart.append("g")
+/*            chart.append("g")
                     .attr("class", "y axis")
                     .attr("transform", "translate("+margin.left+",0)")
                     .call(yAxis)
@@ -96,10 +76,11 @@
                     .attr("dy", ".71em")
                     .style("text-anchor", "end")
                     .text("Frequency");
+ */
         });
 
         function type(d) {
-            d.player = +d.player; // coerce to number
+            d.score = +d.score; // coerce to number
             return d;
         }
 
