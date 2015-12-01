@@ -22,6 +22,8 @@
 //                drawChart(results);
 //                alert("Results fetched.");
             var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var teamnames = ["Bacchus", "Belenus", "Doris", "Electra", "Hattifnattarna", "Midas",
+                         "Nemesis", "Discordia&Hydra", "Sisyphus", "Vulcan"];
             for (i=0;i<results.length;i++) {
                 if(results[i].player == "Bacchus") {
                     if(Number(results[i].score) < 5) {
@@ -94,7 +96,12 @@
                     }
                 }
             }
-            $('#one').css('width', scores[0]*9 + "px");
+            for (i=0; i < scores.length;i++) {
+                $(".chart").append(
+                        "<div height='50px' width=' " + scores[i]*9 + "px'>" + teamnames[i] + "</div>"
+                );
+            }
+/*            $('#one').css('width', scores[0]*9 + "px");
             $('#one').css('height', "50px");
             $('#one').text("Bacchus: " + scores[0]);
             $('#two').css('width', scores[1]*9 + "px");
@@ -124,6 +131,7 @@
             $('#ten').css('width', scores[9]*9 + "px");
             $('#ten').css('height', "50px");
             $('#ten').text("Vulcan: " + scores[9]);
+*/
         });
     }
     window.onload = drawPage;
