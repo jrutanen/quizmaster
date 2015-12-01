@@ -96,6 +96,8 @@
                     }
                 }
             }
+            $(".chart").remove();
+            $(".graph").append("<div class=chart>");
             for (i=0; i < scores.length;i++) {
                 $(".chart").append(
                         "<div height='50px' width=' " + scores[i]*9 + "px'>" + teamnames[i] + "</div>"
@@ -144,17 +146,10 @@
     <h1>Quiz Master Leader Board</h1>
     <br><br>
 </div>
-<div class=chart>
-    <div id="one" width="0px"></div>
-    <div id="two" width="0px"></div>
-    <div id="three" width="0px"></div>
-    <div id="four" width="0px"></div>
-    <div id="five" width="0px"></div>
-    <div id="six" width="0px"></div>
-    <div id="seven" width="0px"></div>
-    <div id="eight" width="0px"></div>
-    <div id="nine" width="0px"></div>
-    <div id="ten" width="0px"></div>
+<div class=graph>
+    <div class=chart>
+
+    </div>
 </div>
 </body>
 </html>
